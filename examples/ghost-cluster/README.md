@@ -1,4 +1,4 @@
-# Example Deployment of the Ghost Cluster Module
+# Example Deployment of the Ghost blog cluster
 
 This example demonstrates how to deploy a Ghost Cluster using this terraform module. The following steps will guide you through:
 1. Generate certificates for Client VPN service
@@ -91,7 +91,7 @@ The connection procedure via the command-line client (we will use the mysql-clie
 3. Use the following command to connect to the database: `mysql -h <database__connection__host> -u <database__connection__user> -p <database__connection__database>`. Replace the values in <> with the values that are specified in the environment in JSON.
 > You are now connected and can use SQL to query the database (e.g. `SHOW TABLES;`). Close the console with `exit`
 
-### 7. Execute a command in the ECS Fargate Task
+### 7. Execute a command in the ECS Fargate Task
 To execute a command in the ECS Cluster task, you can use the AWS CLI or AWS Management Console. Here is an example using the AWS CLI:
 
 1. Plase install the Session Manager plugin for the AWS CLI `https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html`

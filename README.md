@@ -1,7 +1,7 @@
 # Terraform Multi-AZ Web Application Deployment Module for AWS
 This terraform module deploys applications with an ALB, VPN, ECS Fargate Cluster, and an Aurora Cluster in multiple Availability Zones (AZs) on AWS.
 
-> **_DISCLAIMER:_**  This module is for presentation purposes only and does not rely on any external terraform modules. It's not full-featured (e.g. HTTP only), and should not be used for production deployments. For these purposes, this module does not rely on any external terraform modules.
+> **_DISCLAIMER:_**  This module is for presentation purposes only and does not rely on any external terraform modules. It's not full-featured (e.g. HTTP only), and should not be used for production deployments.
 
 ## Features
 This module consists of the following parts:

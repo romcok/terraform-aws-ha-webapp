@@ -147,7 +147,7 @@ module "multi_az_blog" {
 | <a name="output_database_name"></a> [database_name](#output\_database_name) | Auora cluster database name |
 | <a name="output_volume_dns_name"></a> [volume_dns_name](#output\_volume_dns_name) | EFS volume dns name |
 | <a name="output_volume_access_point_id"></a> [volume_access_point_id](#output\_volume_access_point_id) | EFS volume access point id |
-| <a name="output_volume_mount_target_ips"></a> [volume_mount_target_ips](#output\_volume_mount_target_ips_) | ECS volume mount target IPv4 adresses |
+| <a name="output_volume_mount_target_ips"></a> [volume_mount_target_ips](#output\_volume_mount_target_ips) | ECS volume mount target IPv4 adresses |
 | <a name="output_vpn_id"></a> [vpn_id](#output\_vpn_id) | ID of Client VPN endpoint |
 | <a name="output_vpn_arn"></a> [vpn_arn](#output\_vpn_arn) | ARN of Client VPN endpoint |
 | <a name="output_vpn_dns_name"></a> [vpn_dns_name](#output\_vpn_dns_name) | Client VPN DNS name |

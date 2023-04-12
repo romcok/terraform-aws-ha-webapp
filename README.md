@@ -25,7 +25,7 @@ resource random_string database_password {
 }
 
 module "multi_az_blog" {
-  source = "https://github.com/romcok/terraform-aws-ha-webapp"
+  source = "git::https://github.com/romcok/terraform-aws-ha-webapp.git"
 
   name        = "blog"
   environment = "prod"

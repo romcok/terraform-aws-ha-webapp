@@ -18,6 +18,7 @@ This example demonstrates how to deploy a Ghost Cluster using this terraform mod
 - AWS CLI installed and configured with your AWS credentials (`https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html`)
 - Installed Session Manager plugin for the AWS CLI (`https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html`)
 - AWS Client VPN installed (`https://aws.amazon.com/vpn/client-vpn-download/`)
+- Installed easy-rsa utility (`https://github.com/OpenVPN/easy-rsa` or `https://formulae.brew.sh/formula/easy-rsa`)
 - Installed mysql-cli package or other MYSQL client (`https://formulae.brew.sh/formula/mysql-client`)
 
 ## Usage
@@ -26,10 +27,11 @@ This example demonstrates how to deploy a Ghost Cluster using this terraform mod
 To generate client and server certificates for Client VPN service, you can use the simple script attached to this example. 
 
 Here's how to generate certificates to connect to a VPC:
-1. Execute the command `./utils/easyrsa-gen.sh` from your example working directory.
-2. Provide `Common Name` for the certification authority.
-3. Confirm server request details with `yes`
-4. Confirm client request details with `yes`
+1. Install the `easy-rsa` utility if you don't already have it installed.
+2. Execute the command `./utils/easyrsa-gen.sh` from your example working directory.
+3. Provide `Common Name` for the certification authority.
+4. Confirm server request details with `yes`
+5. Confirm client request details with `yes`
 
 > A `vpn-certs` directory should be created in your working directory with the generated certificates
 

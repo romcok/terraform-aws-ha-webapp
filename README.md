@@ -11,6 +11,8 @@ This module consists of the following parts:
 - Aurora Cluster for relational database storage
 - Supports deployment in multiple availability zones
 
+## Architecture
+![Architecture Diagram](assets/diagram.png)
 
 ## Example
 Review the [ghost blog example](examples/ghost-cluster) to see how to use this module.

@@ -160,7 +160,7 @@ Certain placeholders are used to represent environment-specific values within en
 
 | Name                     | Description                                         |
 |--------------------------|-----------------------------------------------------|
-|__ALB_URL__               | ALB HTTL URL (`http://<alb_dns_name>`)              |
+|__ALB_URL__               | ALB HTTP URL (`http://<alb_dns_name>`)              |
 | __DB_NAME__              | Database name                                       |
 | __DB_USERNAME__          | Database username                                   |
 | __DB_PASSWORD__          | Database password                                   |
@@ -170,7 +170,7 @@ Certain placeholders are used to represent environment-specific values within en
 | __DB_REPLICAS_ENDPOINT__ | Comma separated database replica endpoints          |
 | __DB_ENDPOINTS__         | Comma separated list of database instance endpoints |
 
-## TODO
+## TODO
 The following items are areas of improvement and additional features that can be added to the module in the future:
 - Update the ALB listener to use the SSL certificate and configure HTTPS connections.
 - Implement auto-scaling for the ECS Fargate tasks to handle varying levels of traffic and ensure optimal resource utilization.

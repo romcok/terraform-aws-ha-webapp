@@ -16,6 +16,10 @@ resource aws_ecs_cluster main {
   })
 }
 
+locals {
+  container_name = "${module.label.id}-container"
+}
+
 resource aws_ecs_service webapp {
   name                   = "${module.label.id}-service"
   cluster                = aws_ecs_cluster.main.id
@@ -32,7 +36,7 @@ resource aws_ecs_service webapp {
 
   load_balancer {
     target_group_arn = var.target_group_arn
-    container_name   = "${module.label.id}-container"
+    container_name   = local.container_name
     container_port   = var.container_port
   }
   /*

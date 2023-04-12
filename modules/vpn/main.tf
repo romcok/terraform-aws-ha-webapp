@@ -30,3 +30,23 @@ resource aws_ec2_client_vpn_endpoint main {
 
   tags = module.label.tags
 }
+
+
+resource aws_ec2_client_vpn_network_association access {
+  count = length(var.subnet_ids)
+
+  client_vpn_endpoint_id = aws_ec2_client_vpn_endpoint.main.id
+  subnet_id              = element(var.subnet_ids, count.index)
+}
+
+resource aws_ec2_client_vpn_authorization_rule access_rule {
+  count = length(var.subnet_ids)
+
+  client_vpn_endpoint_id = aws_ec2_client_vpn_endpoint.main.id
+  target_network_cidr    = element(var.subnet_cidrs, count.index)
+  authorize_all_groups   = true
+
+  timeouts {
+    create = "20m"
+  }
+}

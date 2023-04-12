@@ -1,7 +1,7 @@
-# Terraform Multi-AZ Application Deployment Module for AWS
+# Terraform Multi-AZ Web Application Deployment Module for AWS
 This terraform module deploys applications with an ALB, VPN, ECS Fargate Cluster, and an Aurora Cluster in multiple Availability Zones (AZs) on AWS.
 
-> **_DISCLAIMER:_**  This module is for presentation purposes only, it's not full-featured (e.g. HTTP only), and should not be used for production deployments.
+> **_DISCLAIMER:_**  This module is for presentation purposes only and does not rely on any external terraform modules. It's not full-featured (e.g. HTTP only), and should not be used for production deployments. For these purposes, this module does not rely on any external terraform modules.
 
 ## Features
 This module consists of the following parts:
@@ -25,7 +25,7 @@ resource random_string database_password {
 }
 
 module "multi_az_blog" {
-  source = "https://github.com/romcok/terraform-multiaz-webapp"
+  source = "https://github.com/romcok/terraform-aws-ha-webapp"
 
   name        = "blog"
   environment = "prod"
@@ -150,9 +150,13 @@ module "multi_az_blog" {
 | <a name="output_database_name"></a> [database_name](#output\_database_name) | Auora cluster database name |
 | <a name="output_volume_dns_name"></a> [volume_dns_name](#output\_volume_dns_name) | EFS volume dns name |
 | <a name="output_volume_access_point_id"></a> [volume_access_point_id](#output\_volume_access_point_id) | EFS volume access point id |
+| <a name="output_volume_mount_target_ips"></a> [volume_mount_target_ips](#output\_volume_mount_target_ips_) | ECS volume mount target IPv4 adresses |
 | <a name="output_vpn_id"></a> [vpn_id](#output\_vpn_id) | ID of Client VPN endpoint |
 | <a name="output_vpn_arn"></a> [vpn_arn](#output\_vpn_arn) | ARN of Client VPN endpoint |
 | <a name="output_vpn_dns_name"></a> [vpn_dns_name](#output\_vpn_dns_name) | Client VPN DNS name |
+| <a name="output_ecs_cluster_name"></a> [ecs_cluster_name](#output\_ecs_cluster_name) | ECS fargate cluster name |
+| <a name="output_ecs_service_name"></a> [ecs_service_name](#output\_ecs_service_name) | ECS fargate service name |
+| <a name="output_ecs_container_name"></a> [ecs_container_name](#output\_ecs_container_name) | ECS fargate container name |
 
 ## Environment Variable Replacements
 Certain placeholders are used to represent environment-specific values within environment variables. These placeholders will be replaced with the appropriate values during the deployment or runtime of the ECS Fargate tasks. Here is the list of placeholders:
@@ -169,6 +173,13 @@ Certain placeholders are used to represent environment-specific values within en
 | __DB_REPLICAS_ENDPOINT__ | Comma separated database replica endpoints          |
 | __DB_ENDPOINTS__         | Comma separated list of database instance endpoints |
 
+## TODO
+The following items are areas of improvement and additional features that can be added to the module in the future:
+- Update the ALB listener to use the SSL certificate and configure HTTPS connections.
+- Implement auto-scaling for the ECS Fargate tasks to handle varying levels of traffic and ensure optimal resource utilization.
+- Evaluate and implement additional performance optimizations for the ECS tasks, such as caching strategies and content delivery networks (CDN).
+
+
 ## License
 This module is released under the MIT License.
 
@@ -177,7 +188,7 @@ This module is released under the MIT License.
 |---|
 
   [romcok_profile]: https://github.com/romcok
-  [romcok_avatar]: https://avatars.githubusercontent.com/u/179070?v=4
+  [romcok_avatar]: https://avatars.githubusercontent.com/u/179070?s=150&v=4
 
 ---
 Don't hesitate to open an issue or pull request if you find any issues or have suggestions for improvements. Your contributions are always welcome!

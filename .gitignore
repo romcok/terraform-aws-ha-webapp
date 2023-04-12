@@ -32,6 +32,9 @@ override.tf.json
 # example: *tfplan*
 
 # Custom
+vpn-certs/
+downloaded-client-config.ovpn
+
 .vscode/
 data/
 tmp/

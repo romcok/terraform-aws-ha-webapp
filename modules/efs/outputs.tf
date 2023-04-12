@@ -13,3 +13,7 @@ output volume_dns_name {
 output access_point_id {
   value = aws_efs_access_point.volume.id
 }
+
+output mount_target_ips {
+  value = aws_efs_mount_target.mount.*.ip_address
+}

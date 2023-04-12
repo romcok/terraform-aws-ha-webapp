@@ -42,6 +42,10 @@ output volume_access_point_id {
   value = module.efs.access_point_id
 }
 
+output volume_mount_target_ips {
+  value = module.efs.mount_target_ips
+}
+
 output vpn_id {
   value = one(module.vpn.*.id)
 }
@@ -52,4 +56,16 @@ output vpn_arn {
 
 output vpn_dns_name {
   value = one(module.vpn.*.dns_name)
+}
+
+output ecs_cluster_name {
+  value = module.fargate.cluster_name
+}
+
+output ecs_service_name {
+  value = module.fargate.service_name
+}
+
+output ecs_container_name {
+  value = module.fargate.container_name
 }

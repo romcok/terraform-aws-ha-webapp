@@ -49,9 +49,6 @@ module "multi_az_blog" {
       database__connection__password = "__DB_PASSWORD__"
       database__connection__database = "__DB_NAME__"
     }
-    secrets            = {
-      url = aws_ssm_parameter.url.arn
-    }
     cpu                = 512
     memory             = 1024
     count              = 3
